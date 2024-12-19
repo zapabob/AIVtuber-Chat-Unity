@@ -1,0 +1,76 @@
+src:
+  structure.yaml:
+    content: "AIVtuberチャットアプリのプロジェクト構造定義"
+    dependency: []
+
+  config:
+    .env:
+      content: |-
+        アプリケーションの基本設定と環境変数を管理
+        - アプリケーション名、環境、デバッグモード
+        - API認証情報（Dify、Voicevox）
+        - データベース接続設定
+        - クラウドサービス認証情報
+        - セキュリティ関連パラメータ
+        - 多言語対応設定
+        - サーバーとロギングの基本設定
+        - AI設定（モデル、温度、トークン数）
+        - 音声設定（サンプルレート、チャンネル、ビットレート）
+        - VRM関連設定
+      dependency: []
+    .env.development:
+      content: |-
+        開発環境専用の環境変数設定
+        - デバッグモードの有効化
+        - 開発用API設定（Dify、Voicevox）
+        - ローカルデータベース接続
+        - テスト用サービス設定
+        - 多言語対応の開発設定
+        - セキュリティ設定（開発用キー）
+        - クラウドストレージの開発設定
+        - 音声設定
+        - システム設定（並行リクエスト、タイムアウト）
+      dependency: []
+    .env.production:
+      content: |-
+        本番環境用の機密性の高い環境変数設定
+        - 本番用Dify API設定
+        - VoiceVox API本番環境設定
+        - 本番データベース接続情報
+        - クラウドプロバイダー設定
+        - セキュリティ設定（本番用キー）
+        - ロギング設定
+        - 多言語対応設定
+        - パフォーマンス設定
+        - モニタリング設定
+      dependency: []
+
+  core:
+    api:
+      dify-client.cs:
+        content: |-
+          Dify APIとの通信を管理するクライアントクラス
+          - HTTPクライアントを使用したAPIリクエスト
+          - チャットメッセージの送信
+          - レスポンスのパース
+          - エラーハンドリング
+          - API接続の検証
+          - 信頼性スコアの計算
+        dependency:
+          - src/core/models/llm-request.cs
+          - src/core/models/llm-response.cs
+      voicevox-client.cs:
+        content: |-
+          Voicevox音声合成APIとの通信を管理
+          - 音声合成のクエリ作成
+          - 音声データの生成
+          - 音声再生の制御
+          - 話者リストの取得
+          - エラーハンドリング
+        dependency:
+          - src/core/services/audio-manager.cs
+    models:
+      chat-log.cs:
+        content: |-
+          チャットログのデータモデルを定義
+          - メッセージ履
