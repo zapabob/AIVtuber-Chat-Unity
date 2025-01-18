@@ -1,0 +1,27 @@
+{
+    "VRMPath": "Assets/VRM/Model.vrm",
+    "ModelPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "ModelRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "ModelScale": 1.0,
+    "VoicevoxEndpoint": "http://localhost:50021",
+    "SpeakerId": 1,
+    "VoiceSpeed": 1.0,
+    "VoicePitch": 0.0,
+    "VoiceIntonation": 1.0,
+    "LLMServiceType": 0,
+    "SystemPrompt": "あなたはこれからuserと仲の良い1人の人間として振舞い会話を行います。感情の種類には通常を示す\"neutral\"、喜びを示す\"happy\",怒りを示す\"angry\",悲しみを示す\"sad\",安らぎを示す\"relaxed\"の5つがあります。",
+    "DifyEndpoint": "",
+    "DifyApiKey": "",
+    "LocalLLMEndpoint": "http://localhost:1234/v1/chat/completions",
+    "LocalLLMModel": "mixtral-8x7b-instruct",
+    "MaxRetryCount": 3,
+    "RetryDelay": 1.0
+}
