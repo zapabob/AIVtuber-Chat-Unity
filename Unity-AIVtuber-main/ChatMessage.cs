@@ -1,24 +1,17 @@
+using UnityEngine;
 using System;
 
-namespace AIVTuber
+[Serializable]
+public class ChatMessage
 {
-    public enum MessageType
-    {
-        User,
-        AI,
-        Error
-    }
+    public string text;
+    public bool isUserMessage;
+    public DateTime timestamp;
 
-    [Serializable]
-    public class ChatMessage
+    public ChatMessage(string text, bool isUserMessage)
     {
-        public string Text;
-        public MessageType Type;
-        public DateTime Timestamp;
-
-        public ChatMessage()
-        {
-            Timestamp = DateTime.Now;
-        }
+        this.text = text;
+        this.isUserMessage = isUserMessage;
+        this.timestamp = DateTime.Now;
     }
 }
